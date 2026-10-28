@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên hệ hỗ trợ | An Việt Travel</title>
+  <style>
+    :root {
+      --navy: #123b56;
+      --blue: #176b87;
+      --pale: #eaf5f6;
+      --ink: #17384b;
+      --muted: #637985;
+      --line: #dce8ec;
+      --bg: #f5f9fa;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 18px; background: var(--bg); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.55; }
+    .page { max-width: 980px; margin: 0 auto; display: grid; gap: 22px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 27px; box-shadow: 0 10px 28px rgba(18,59,86,.08); }
+    h1, h2 { margin: 0; color: var(--navy); }
+    h1 { font-size: clamp(25px, 4vw, 32px); }
+    h2 { font-size: 22px; }
+    .intro { margin: 8px 0 20px; color: var(--muted); font-size: 14px; }
+    .contact-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .contact-item { border: 1px solid #e7eff2; background: #fbfdfd; padding: 17px; border-radius: 13px; min-width: 0; }
+    .icon { width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center; background: var(--pale); color: var(--blue); font-size: 20px; margin-bottom: 12px; }
+    .label { color: var(--muted); text-transform: uppercase; letter-spacing: .6px; font-size: 11px; font-weight: 700; margin: 0 0 6px; }
+    .value { color: var(--ink); font-weight: 600; font-size: 14px; margin: 0; overflow-wrap: anywhere; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .hours { display: inline-block; background: #eaf7ee; color: #267344; font-size: 11px; font-weight: 700; border-radius: 20px; padding: 4px 8px; margin-top: 7px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+    .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+    .full { grid-column: 1 / -1; }
+    label { font-size: 13px; font-weight: 700; color: #294354; }
+    .required { color: #b34837; }
+    input, select, textarea { width: 100%; border: 1px solid #cfdde2; border-radius: 10px; padding: 12px 13px; font: inherit; font-size: 14px; color: var(--ink); background: white; outline: none; }
+    input:focus, select:focus, textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(23,107,135,.12); }
+    textarea { min-height: 112px; resize: vertical; }
+    .actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 19px; }
+    button { border: 0; border-radius: 10px; padding: 13px 20px; color: #fff; background: var(--blue); font-weight: 700; font-size: 14px; cursor: pointer; }
+    button:hover { background: var(--navy); }
+    .reset { background: #edf3f5; color: var(--navy); }
+    .reset:hover { background: #dce8ec; }
+    .hint { font-size: 12px; color: var(--muted); }
+    .status { display: none; margin-top: 15px; padding: 12px 14px; border-radius: 10px; font-size: 14px; }
+    .status.error { display: block; background: #fff0ed; color: #8c2c20; }
+    .status.success { display: block; background: #eaf7ee; color: #21683b; }
+    @media(max-width: 760px) { .contact-list { grid-template-columns: 1fr; } .card { padding: 21px; } }
+    @media(max-width: 480px) { body { padding: 9px; } .form-grid { grid-template-columns: 1fr; } .full { grid-column: auto; } .actions button { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-labelledby="contact-heading">
+      <h1 id="contact-heading">Liên hệ hỗ trợ</h1>
+      <p class="intro">An Việt Travel luôn sẵn sàng tư vấn và hỗ trợ bạn trong từng hành trình.</p>
+      <div class="contact-list">
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">⌖</div>
+          <p class="label">Văn phòng làm việc</p>
+          <p class="value">02 Nguyễn Đình Chiểu, Nha Trang, Phường Bắc Nha Trang, Tỉnh Khánh Hòa.</p>
+        </div>
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">☎</div>
+          <p class="label">Tổng đài Tư vấn &amp; CSKH</p>
+          <p class="value"><a href="tel:0988456607">0988 456 607</a></p>
+          <span class="hours">Hỗ trợ 24/7</span>
+        </div>
+        <div class="contact-item">
+          <div class="icon" aria-hidden="true">✉</div>
+          <p class="label">Email</p>
+          <p class="value"><a href="mailto:anvietravelll@gmail.com">anvietravelll@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="request-heading">
+      <h2 id="request-heading">Gửi yêu cầu hỗ trợ</h2>
+      <p class="intro">Vui lòng điền thông tin bên dưới. Khi nhấn gửi, ứng dụng email của bạn sẽ mở với nội dung yêu cầu đã được soạn sẵn.</p>
+      <form id="support-form">
+        <div class="form-grid">
+          <div class="field">
+            <label for="fullname">Họ và tên <span class="required">*</span></label>
+            <input id="fullname" name="fullname" autocomplete="name" placeholder="Nhập họ và tên" required>
+          </div>
+          <div class="field">
+            <label for="phone">Số điện thoại <span class="required">*</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Nhập số điện thoại" required>
+          </div>
+          <div class="field">
+            <label for="email">Email của bạn</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="ban@example.com">
+          </div>
+          <div class="field">
+            <label for="topic">Nội dung cần hỗ trợ <span class="required">*</span></label>
+            <select id="topic" name="topic" required>
+              <option value="">Chọn nội dung</option>
+              <option>Tư vấn tour</option>
+              <option>Đặt tour / Lịch khởi hành</option>
+              <option>Thay đổi hoặc hủy đặt chỗ</option>
+              <option>Chăm sóc khách hàng / Góp ý</option>
+              <option>Khác</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="tour">Tour quan tâm</label>
+            <select id="tour" name="tour">
+              <option value="">Chưa chọn tour</option>
+              <option>Bãi Tranh – Làng Chài – Hòn Tằm</option>
+              <option>Hòn Mun – Hòn Tằm</option>
+              <option>Đảo Khỉ / Đảo Hoa Lan</option>
+              <option>Hòn Mun – Làng Chài – Mini Beach</option>
+              <option>Tour khác / Cần tư vấn</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="date">Ngày dự kiến đi</label>
+            <input id="date" name="date" type="date">
+          </div>
+          <div class="field">
+            <label for="adults">Số người lớn</label>
+            <input id="adults" name="adults" type="number" min="0" max="100" value="1">
+          </div>
+          <div class="field">
+            <label for="children">Số trẻ em</label>
+            <input id="children" name="children" type="number" min="0" max="100" value="0">
+          </div>
+          <div class="field full">
+            <label for="message">Chi tiết yêu cầu</label>
+            <textarea id="message" name="message" placeholder="Hãy cho chúng tôi biết bạn cần hỗ trợ điều gì..."></textarea>
+          </div>
+        </div>
+        <div class="actions">
+          <button type="submit">Gửi yêu cầu hỗ trợ</button>
+          <button type="reset" class="reset">Xóa nội dung</button>
+          <span class="hint">Các mục có dấu * là bắt buộc.</span>
+        </div>
+        <div id="status" class="status" role="alert" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const SUPPORT_EMAIL = "anvietravelll@gmail.com";
+    const form = document.getElementById("support-form");
+    const statusBox = document.getElementById("status");
+    const dateInput = document.getElementById("date");
+    const now = new Date();
+    dateInput.min = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+
+    form.addEventListener("reset", () => {
+      statusBox.className = "status";
+      statusBox.textContent = "";
+    });
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const subject = encodeURIComponent("[An Việt Travel] Yêu cầu hỗ trợ - " + data.get("fullname"));
+      const body = encodeURIComponent(
+        "YÊU CẦU HỖ TRỢ AN VIỆT TRAVEL\n\n" +
+        "Họ và tên: " + data.get("fullname") + "\n" +
+        "Số điện thoại: " + data.get("phone") + "\n" +
+        "Email khách hàng: " + (data.get("email") || "Chưa cung cấp") + "\n" +
+        "Nội dung cần hỗ trợ: " + data.get("topic") + "\n" +
+        "Tour quan tâm: " + (data.get("tour") || "Chưa chọn") + "\n" +
+        "Ngày dự kiến đi: " + (data.get("date") || "Chưa chọn") + "\n" +
+        "Số người lớn: " + (data.get("adults") || "0") + "\n" +
+        "Số trẻ em: " + (data.get("children") || "0") + "\n\n" +
+        "Chi tiết yêu cầu:\n" + (data.get("message") || "Không có")
+      );
+      statusBox.className = "status success";
+      statusBox.textContent = "Đang mở ứng dụng email để bạn gửi yêu cầu đến An Việt Travel. Hãy nhấn nút Gửi trong ứng dụng email để hoàn tất.";
+      window.location.href = "mailto:" + SUPPORT_EMAIL + "?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>
